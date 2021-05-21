@@ -21,9 +21,13 @@ def hash_collision(k):
     y_txt = ''
     while x_end != y_end:
         if random.randint(0, 1) == 0:
+            if len(x_txt) > 2*15:
+                x_txt = ''
             x_txt += random.choice(char_list)
             x = x_txt.encode('utf-8')
         else:
+            if len(y_txt) > 2*15:
+                y_txt = ''
             y_txt += random.choice(char_list)
             y = y_txt.encode('utf-8')
 
